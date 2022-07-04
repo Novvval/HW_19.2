@@ -7,11 +7,11 @@ auth_ns = Namespace("auth")
 
 @auth_ns.route("/")
 class AuthView(Resource):
-    def post(self, data):
+    def post(self):
         data = request.get_json()
         return auth_service.create_tokens(data)
 
-    def put(self, data):
+    def put(self):
         data = request.get_json()
         return auth_service.update(data)
 
